@@ -1,0 +1,33 @@
+{% extends 'main.html'%}
+
+{% block make %}
+    
+<ul>
+    
+{% for make in makes %}
+<li>
+    <div>
+        <a href="/make/{{ make.id }}">
+            <div>
+                <img src="{{ make.logo }}"/>
+                <span>{{ make.name }}</span>
+            </div>
+         </a>     
+    </div>
+</li>
+{% endfor %}
+</ul>
+
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front" style="background-color: aqua">
+			<!-- front content -->
+ front 
+		</div>
+		<div class="back" style="background-color: darkmagenta">
+			<!-- back content -->
+back
+		</div>
+	</div>
+</div>
+{% endblock %}
