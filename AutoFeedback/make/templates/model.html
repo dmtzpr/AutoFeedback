@@ -1,0 +1,28 @@
+{% extends 'main.html'%}
+{% block make %}
+<div class="container" style="background-color:  #fff">
+<div>
+
+<table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Generation</th>
+                  <th>Years</th>
+                  <th>Number of Reviews</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for generation in generations %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td><a href="reviews/comment/" >{{ generation.name }}</a></td>
+                  <td>{{ generation.start_year }} - {{ generation.end_year}}</td>
+                  <td></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+</div>
+</div>
+{% endblock %}

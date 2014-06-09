@@ -2,12 +2,14 @@
 from django.template.loader import render_to_string, get_template
 from django.http.response import HttpResponse
 from django.shortcuts import render_to_response
-from make.models import Make, Model
+from make.models import Make, Model, Generation, Comment
 
 
 def home(request):
-    return render_to_response('index.html', {'makes': Make.objects.all}) 
-    #return HttpResponse(render_to_string('index.html', {'content': [1, 2, 3]}))
+
+    make = Make.objects.order_by('name')
+
+    return render_to_response('index.html', {'makes': make})
 
 
 def make(request, make_id=1):
@@ -16,6 +18,23 @@ def make(request, make_id=1):
     models = Model.objects.filter(make_id = make_id )
 
     return render_to_response('make.html', {'make': make, 'models': models})
+
+
+def model(request):
+
+    generations = Generation.objects.filter(model_id = 1 )
+    
+    return render_to_response('model.html', {'generations': generations})
+
+#generation_id = 1
+def generation(request):
+
+    generation_id = 1
+    comments = Comment.objects.filter(generation_id = generation_id )
+
+    return render_to_response('model.html', {'comments': comments})
+
+
 
 
 def vw(request):

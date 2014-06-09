@@ -1,5 +1,6 @@
 {% extends 'main.html'%}
 {% block make %}
+<div class="container" style="background-color:  #fff">
 <div>
     <p>{{make.name}}</p>
     <span>{{make.description}}</span>
@@ -9,16 +10,16 @@
         {% for model in models %}
         <li>
             <div>
-                <a href="/model/get/{{ model.id }}">
+                <a href="/generation/gen/">
                     <div>
-                      
-                        <span>{{ model.name }}</span>
+                      <span>{{ model.name }}</span>
                     </div>
                 </a>
             </div>
         </li>
         {% endfor %}
     </ul>
+</div>
 </div>
 {% endblock %}
 

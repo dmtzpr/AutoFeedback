@@ -2,32 +2,39 @@
 
 {% block make %}
     
-<ul>
+<ul class="make-flipper-list">
     
 {% for make in makes %}
 <li>
-    <div>
-        <a href="/make/{{ make.id }}">
+    
+<div class="flip-container">
+<a href="/make/{{ make.id }}">
+	<div class="flipper">
+		<div class="front">
+        
             <div>
                 <img src="{{ make.logo }}"/>
-                <span>{{ make.name }}</span>
             </div>
-         </a>     
-    </div>
+		</div>
+		<div class="back">
+		    <div>
+        <span>{{make.name}}</span>
+        <br/>
+        <span>Has {{ make.id }} models</span>
+        <br/>
+        <span>Has {{ make.id }} comments</span>
+		</div>
+</div>
+	</div>
+  </a>  
+</div>
+    
+
+
+    
 </li>
 {% endfor %}
 </ul>
 
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front" style="background-color: aqua">
-			<!-- front content -->
- front 
-		</div>
-		<div class="back" style="background-color: darkmagenta">
-			<!-- back content -->
-back
-		</div>
-	</div>
-</div>
+
 {% endblock %}

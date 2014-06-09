@@ -8,6 +8,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', include('make.urls')),
     url(r'^make/', include('make.urls')),
+    url(r'^generation/', include('make.urls')),
+    url(r'^reviews/', include('make.urls')),
     #url(r'^AutoFeedback/', include('article.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
